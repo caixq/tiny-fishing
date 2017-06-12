@@ -3,7 +3,7 @@ var RESOURCES = {
   's_Tiny.js_png': 'res/images/Tiny.js.png',
 
   // bottom,
-  's_bottom-bar_png': 'res/images/bottom-bar.png',
+  's_bottom_bar_png': 'res/images/bottom_bar.png',
   's_bullet_png': 'res/images/bullet.png',
   's_bullet1_png': 'res/images/bullet1.png',
   's_bullet2_png': 'res/images/bullet2.png',

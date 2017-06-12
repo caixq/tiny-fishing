@@ -44,8 +44,6 @@ import './src/css/orientation.css';
       Tiny.Loader.run({
         resources: resources,
         onProgress: function (pre, res) {
-          console.log('percent:', pre + '%', res.name);
-
           var num = ~~pre;
           //更新UI
           percent.innerHTML = num + '%';
