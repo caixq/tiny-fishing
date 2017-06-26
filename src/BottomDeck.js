@@ -7,7 +7,7 @@ class BottomDeck extends Tiny.Container {
     super();
     var self = this;
     this.currentCannon = 1;
-    this.cannonHolder = new Tiny.Sprite(Tiny.Texture.fromImage(RESOURCES['s_bottom_bar_png']));
+    this.cannonHolder = Tiny.Sprite.fromImage(RESOURCES['s_bottom_bar_png']);
     this.cannon = Tiny.Sprite.fromImage(RESOURCES['s_cannon1_png']);
     this.minus = Tiny.ImageButton(RESOURCES['s_cannon_minus_png'], RESOURCES['s_cannon_minus_down_png'], this.changeCannon(false, this));
     this.plus = Tiny.ImageButton(RESOURCES['s_cannon_plus_png'], RESOURCES['s_cannon_plus_down_png'], this.changeCannon(true, this));
