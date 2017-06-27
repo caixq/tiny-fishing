@@ -12,6 +12,7 @@ class BottomDeck extends Tiny.Container {
     this.minus = Tiny.ImageButton(RESOURCES['s_cannon_minus_png'], RESOURCES['s_cannon_minus_down_png'], this.changeCannon(false, this));
     this.plus = Tiny.ImageButton(RESOURCES['s_cannon_plus_png'], RESOURCES['s_cannon_plus_down_png'], this.changeCannon(true, this));
     this.bullet = Tiny.AnimatedSprite.fromImage(RESOURCES['s_bullet' + self.currentCannon + '_png']);
+    this.fishingNet = Tiny.AnimatedSprite.fromImage(RESOURCES['s_web' + self.currentCannon + '_png']);
     this.renderSprite();
 
     //设置当前layer可点击
@@ -26,12 +27,17 @@ class BottomDeck extends Tiny.Container {
     this.cannon.setAnchor(0.5);
     this.bullet.setPosition(Tiny.WIN_SIZE.width/2,999999);  //放到屏幕之外
     this.bullet.setAnchor(0.5);
+    this.fishingNet.setPosition(999999,999999);  //放到屏幕之外
+    this.fishingNet.setAnchor(0.5);
+    this.fishingNet.width = 150 + this.currentCannon * 10;
+    this.fishingNet.height = 158 + this.currentCannon * 10;
 
     this.addChild(this.cannonHolder);
     this.addChild(this.minus);
     this.addChild(this.plus);
     this.addChild(this.cannon);
     this.addChild(this.bullet);
+    this.addChild(this.fishingNet);
   }
   changeCannon (plus) {
     var self = this;
@@ -58,10 +64,23 @@ class BottomDeck extends Tiny.Container {
 
     this.cannon.setRotation(deg);
     this.bullet.setRotation(deg);
-    this.bullet.x = Tiny.WIN_SIZE.width/2;
-    this.bullet.y = Tiny.WIN_SIZE.height- 80/2;
-    this.bullet.fly = Tiny.MoveTo(1000, {x: toX, y: toY});
-    this.bullet.runAction(this.bullet.fly);
+    this.bullet.setPosition(Tiny.WIN_SIZE.width/2, Tiny.WIN_SIZE.height- 120/2);
+    // 与 Tiny.WIN_SIZE. 与 e.data.global.x 差1.7倍？？？？
+    this.bullet.fly = Tiny.MoveTo(500, {x: toX * 1.7, y: toY * 1.7});
+    this.bullet.runAction([this.bullet.fly]);
+    var rect = new Tiny.Rectangle(Tiny.WIN_SIZE.width/2, Tiny.WIN_SIZE.height- 120/2, this.fishingNet.width, this.fishingNet.height);
+
+    // this.bullet.fly.onUpdate = function (tween, object) {
+    //
+    // }
+    this.bullet.fly.onComplete = function (tween, object) {
+      object.setPosition(99999,99999);
+      self.fishingNet.setPosition(toX * 1.7,toY * 1.7);
+      setTimeout(function () {
+        self.fishingNet.setPosition(99999,99999);
+      },500);
+    }
+
   }
 }
 BottomDeck.create = () => {

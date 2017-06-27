@@ -6,6 +6,7 @@ import Fish from './Fish';
 class StartLayer extends Tiny.Container {
   constructor () {
     super();
+    this.currentBullet = 1;
     this.background = BackgroundScene.create();
     this.bottomDeck = BottomDeck.create();
     this.fish = Fish.create();
