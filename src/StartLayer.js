@@ -15,7 +15,12 @@ class StartLayer extends Tiny.Container {
 
     //设置当前layer可点击
     this.interactive = true;
-
+    var self = this;
+    this.tap = this.mouseup = function (e) {
+      var x = e.data.global.x;
+      var y = e.data.global.y;
+      self.bottomDeck.shotBullet(x,y);
+    }
   }
 }
 

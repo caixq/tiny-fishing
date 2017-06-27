@@ -24,7 +24,7 @@ class Fish extends Tiny.Container {
     this.fishBody = new Tiny.AnimatedSprite(textures);
     this.fishBody.animationSpeed = 0.05;
     this.fishBody.play();
-    this.fishBody.swiming = Tiny.MoveTo(12000, Tiny.point(Tiny.WIN_SIZE.width, this.top));
+    this.fishBody.swiming = Tiny.MoveTo(12000, Tiny.point(Tiny.WIN_SIZE.width, this.top-30));
     this.fishBody.setPosition(this.left, this.top);
     this.fishBody.runAction(Tiny.RepeatForever(this.fishBody.swiming));
     this.addChild(this.fishBody);
