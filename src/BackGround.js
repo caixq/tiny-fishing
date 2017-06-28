@@ -2,6 +2,7 @@
 import RESOURCES from './Resource';
 
 var BackgroundScene = function () {
+
 };
 
 BackgroundScene.prototype.init = function () {
