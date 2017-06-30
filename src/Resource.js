@@ -26,6 +26,16 @@ var RESOURCES = {
   's_cannon_plus_png': 'res/images/cannon_plus.png',
   's_cannon_plus_down_png': 'res/images/cannon_plus_down.png',
   's_coinAni1_png': 'res/images/coinAni1.png',
+  's_coinAni1_01_png': 'res/images/coinAni1_01.png',
+  's_coinAni1_02_png': 'res/images/coinAni1_02.png',
+  's_coinAni1_03_png': 'res/images/coinAni1_03.png',
+  's_coinAni1_04_png': 'res/images/coinAni1_04.png',
+  's_coinAni1_05_png': 'res/images/coinAni1_05.png',
+  's_coinAni1_06_png': 'res/images/coinAni1_06.png',
+  's_coinAni1_07_png': 'res/images/coinAni1_07.png',
+  's_coinAni1_08_png': 'res/images/coinAni1_08.png',
+  's_coinAni1_09_png': 'res/images/coinAni1_09.png',
+  's_coinAni1_10_png': 'res/images/coinAni1_10.png',
   's_coinAni2_png': 'res/images/coinAni2.png',
   's_coinText_png': 'res/images/coinText.png',
   's_energy-bar_png': 'res/images/energy-bar.png',
@@ -71,4 +81,5 @@ var RESOURCES = {
 
   // sounds
 };
+
 export default RESOURCES;

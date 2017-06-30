@@ -1,3 +1,4 @@
+/*
 
 import FishGroup from './FishGroup';
 import Bullet from './Bullet';
@@ -24,7 +25,9 @@ class ShotLayer extends Tiny.Container {
       var y = e.data.global.y;
       self._bullet.shotBullet(x,y);
     }
+
     this.init();
+    console.log('x' + this.x + 'y' + this.y + '***' + this.width + '*****' + this.height);
   }
   init () {
     this._fishGroup.add();
@@ -33,3 +36,4 @@ class ShotLayer extends Tiny.Container {
 }
 
 export default ShotLayer;
+ */

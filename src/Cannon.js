@@ -4,7 +4,7 @@ import RESOURCES from './Resource';
 class Cannon extends Tiny.Sprite {
   constructor(parent) {
 
-    var texture = Tiny.Texture.fromImage(RESOURCES['s_cannon' + parent._parent.currentPower + '_png']);
+    var texture = Tiny.Texture.fromImage(RESOURCES['s_cannon' + parent.currentPower + '_png']);
     super(texture);
     this._parent = parent;
     this.width = 58;
@@ -14,23 +14,13 @@ class Cannon extends Tiny.Sprite {
   }
 
   changeCannon(plus) {
-    var self = this;
-    return function () {
-      var current = self._parent._parent.currentPower;
-      if (plus) {
-        if (current < 7) {
-          current++;
-        }
-      } else {
-        if (current > 1) {
-          current--;
-        }
-      }
-      self._parent._parent.currentPower = current;
-      self.texture = Tiny.Texture.fromImage(RESOURCES['s_cannon' + current + '_png']);
-      //self.bullet.texture = Tiny.Texture.fromImage(RESOURCES['s_bullet' + self.currentPower + '_png']);
-    }
+    this.texture = Tiny.Texture.fromImage(RESOURCES['s_cannon' + current + '_png']);
   }
+
+  changeAngle (deg) {
+    this.setRotation(deg);
+  }
+
 }
 
 Cannon.create = function () {
