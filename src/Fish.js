@@ -23,6 +23,7 @@ class Fish extends Tiny.AnimatedSprite {
     this.swiming = Tiny.MoveTo(12000, Tiny.point(Tiny.WIN_SIZE.width, this.y - 30));
     this.swiming.setInterpolation(Tiny.TWEEN.Interpolation.Bezier);
     this.runAction(Tiny.RepeatForever(this.swiming));
+    this.play();
   }
   die (x,y) {
     var self = this;

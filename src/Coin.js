@@ -24,6 +24,9 @@ class Coin extends Tiny.AnimatedSprite{
       self.move.setInterpolation(Tiny.TWEEN.Interpolation.Bezier);
       self.runAction(self.move);
     },500);
+    this.move.onComplete = function () {
+      this.opacity = 0;
+    }
   }
 }
 export default Coin;

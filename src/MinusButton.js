@@ -1,4 +1,4 @@
-import Button from './Button2';
+import Button from './Button';
 import RESOURCES from './Resource';
 
 class MinusButton extends Button {
