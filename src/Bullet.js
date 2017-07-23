@@ -30,7 +30,7 @@ class Bullet extends Tiny.Sprite {
     this.fly.onComplete = function (tween, object) {
       object.setPosition(99999,99999);
       self._parent._net.open(toX, toY);
-      self._parent._fish.isCollision(toX, toY);
+      self._parent._fishGroup.hasFishAttached(toX, toY);
       setTimeout(function () {
         self._parent._net.setPosition(99999,99999);
       },500);

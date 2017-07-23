@@ -10,7 +10,7 @@ import PlusButton from './PlusButton';
 import FishGroup from './FishGroup';
 import Bullet from './Bullet';
 import Net from './Net';
-import Fish from './Fish';
+// import Fish from './Fish';
 import Coin from './Coin';
 
 class StartLayer extends Tiny.Container {
@@ -22,6 +22,8 @@ class StartLayer extends Tiny.Container {
 
     //设置当前layer可点击
     this.interactive = true;
+
+    this.score = 0;
 
     //创建炮架
     this._bottomdeck = new BottomDeck();
@@ -47,7 +49,7 @@ class StartLayer extends Tiny.Container {
     this._fishGroup = new FishGroup(this);
 
     // 创建鱼
-    this._fish = new Fish(1,this);
+    // this._fish = new Fish(1,this);
 
     // 创建子弹
     this._bullet = new Bullet(this);
@@ -81,10 +83,10 @@ class StartLayer extends Tiny.Container {
     this.addChild(this._minusbtn);
     this.addChild(this._plusbtn);
 
-    //this._fishGroup.add();
+    this._fishGroup.add();
     this.addChild(this._bullet);
     this.addChild(this._net);
-    this.addChild(this._fish);
+    //this.addChild(this._fish);
     this.addChild(this._coin);
   }
 

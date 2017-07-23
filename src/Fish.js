@@ -32,8 +32,13 @@ class Fish extends Tiny.AnimatedSprite {
     Tiny.Action.cleanup(this);
     setTimeout(function () {
       self._parent.removeChild(self);
+      if (self._parent._fishGroup._fishes.length < 5) {
+        var num = Math.ceil(Math.random() * 5);
+        self._parent.addChild(num);
+      }
       self._parent._coin.showCoin(x,y);
     },1000);
+    this._parent.score ++;
   }
   isCollision (x,y) {
     if (Tiny.rectIntersectsRect(this._parent._net.getBounds(),this.getBounds())) {
