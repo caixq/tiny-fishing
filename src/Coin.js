@@ -23,8 +23,8 @@ class Coin extends Tiny.AnimatedSprite{
       self.move = Tiny.MoveTo(1000, Tiny.point(Tiny.WIN_SIZE.width/2 -120, Tiny.WIN_SIZE.height-50));
       self.move.setInterpolation(Tiny.TWEEN.Interpolation.Bezier);
       self.runAction(self.move);
-      this.move.onComplete = function () {
-        this.opacity = 0;
+      self.move.onComplete = function () {
+        self.setPosition(Tiny.WIN_SIZE.width / 2, 99999);
       }
     },500);
 

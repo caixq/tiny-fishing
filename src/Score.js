@@ -1,22 +1,17 @@
 import RESOURCES from './Resource';
 
-class Score extends Tiny.Sprite {
-  constructor(parent) {
-    var texture = Tiny.Texture.fromImage(RESOURCES['s_web' + parent.currentPower + '_png']);
-    super(texture);
+class Score extends Tiny.Text {
+  constructor(score) {
+    super(score);
     this._parent = parent;
-    this.setPosition(Tiny.WIN_SIZE.width / 2, 99999);
+    this.setPosition(0, Tiny.WIN_SIZE.height- 80/2);
     this.setAnchor(0.5);
   }
 
-  changeNet(plus) {
-    this.texture = Tiny.Texture.fromImage(RESOURCES['s_web' + parent.currentPower + '_png']);
-  }
-
-  open (toX, toY) {
-    this.setPosition(toX * 1.7,toY * 1.7);
+  changeScore(score) {
+    this.text = score;
   }
 
 }
 
-export default Net;
+export default Score;

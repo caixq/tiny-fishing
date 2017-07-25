@@ -13,7 +13,7 @@ class Cannon extends Tiny.Sprite {
     this.setAnchor(0.5);
   }
 
-  changeCannon(plus) {
+  changeCannon(current) {
     this.texture = Tiny.Texture.fromImage(RESOURCES['s_cannon' + current + '_png']);
   }
 

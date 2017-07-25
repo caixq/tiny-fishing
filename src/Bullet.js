@@ -10,8 +10,8 @@ class Bullet extends Tiny.Sprite {
     this.setAnchor(0.5);
   }
 
-  changeBullet() {
-    this.texture = Tiny.Texture.fromImage(RESOURCES['s_bullet' + parent.currentPower + '_png']);
+  changeBullet(currentPower) {
+    this.texture = Tiny.Texture.fromImage(RESOURCES['s_bullet' + currentPower + '_png']);
   }
 
   changeAngle (deg) {

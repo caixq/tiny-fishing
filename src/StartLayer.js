@@ -10,7 +10,7 @@ import PlusButton from './PlusButton';
 import FishGroup from './FishGroup';
 import Bullet from './Bullet';
 import Net from './Net';
-// import Fish from './Fish';
+import Score from './Score';
 import Coin from './Coin';
 
 class StartLayer extends Tiny.Container {
@@ -58,6 +58,8 @@ class StartLayer extends Tiny.Container {
 
     this._coin = new Coin(this);
 
+    this.scoreText = new Score(this.score);
+
     //设置当前layer可点击
     this.interactive = true;
 
@@ -88,6 +90,8 @@ class StartLayer extends Tiny.Container {
     this.addChild(this._net);
     //this.addChild(this._fish);
     this.addChild(this._coin);
+    this.addChild(this.scoreText);
+
   }
 
   changePower (plus) {

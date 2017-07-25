@@ -18,9 +18,13 @@ class Fish extends Tiny.AnimatedSprite {
     this.score = type;
     this.deadTxtrue = deadTxtrue;
     this.animationSpeed = 0.05;
-
+    this.setPositionX(Tiny.random(-Tiny.WIN_SIZE.width, 0));
     this.setPositionY(Tiny.random(this.height, Tiny.WIN_SIZE.height - this.height));
-    this.swiming = Tiny.MoveTo(12000, Tiny.point(Tiny.WIN_SIZE.width, this.y - 30));
+
+    this.swiming = Tiny.MoveTo(9000+4000*type, Tiny.point(Tiny.WIN_SIZE.width, this.y - 30));
+    var delayTime = Tiny.random(0,30);
+    this.swiming.setDelay(delayTime);
+
     this.swiming.setInterpolation(Tiny.TWEEN.Interpolation.Bezier);
     this.runAction(Tiny.RepeatForever(this.swiming));
     this.play();
@@ -38,12 +42,15 @@ class Fish extends Tiny.AnimatedSprite {
       }
       self._parent._coin.showCoin(x,y);
     },1000);
+    this._parent._fishGroup.supplement(this.type);
     this._parent.score ++;
+    this._parent.scoreText.changeScore(this._parent.score);
   }
-  isCollision (x,y) {
+  isCollision (i,x,y) {
     if (Tiny.rectIntersectsRect(this._parent._net.getBounds(),this.getBounds())) {
       console.log(999);
       this.die(x,y);
+      this._parent._fishGroup._fishes.splice(i,1);
     } else {
       console.log(333);
     }

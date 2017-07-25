@@ -9,8 +9,8 @@ class Net extends Tiny.Sprite {
     this.setAnchor(0.5);
   }
 
-  changeNet(plus) {
-    this.texture = Tiny.Texture.fromImage(RESOURCES['s_web' + parent.currentPower + '_png']);
+  changeNet(current) {
+    this.texture = Tiny.Texture.fromImage(RESOURCES['s_web' + current + '_png']);
   }
 
   open (toX, toY) {
